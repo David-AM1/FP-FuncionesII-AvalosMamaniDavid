@@ -1,15 +1,21 @@
 #include <iostream>
 #include <cstdlib>
+#include <windows.h>
 using namespace std;
 
+int GenAleatorio(int max){
+	return rand()%(max+1);
+}
+
 int main(){
+	SetConsoleOutputCP(CP_UTF8);
 	int nMaximo, cantidad, aleatorio;
-	cout<<"Ingrese la cantidad de numeros aleatorios a generar: ";
+	cout<<"--- Generador de Números Aleatorios ---"<<endl;
+	cout<<"Ingrese la cantidad de números aleatorios a generar: ";
 	cin>>cantidad;
-	cout<<"Ingrese el valor maximo permitido: ";
+	cout<<"Ingrese el valor máximo permitido: ";
 	cin>>nMaximo;
 	for(int i=1;i<=cantidad;i++){
-		aleatorio= rand()%nMaximo;
-		cout<<aleatorio<<endl;
+		cout<<GenAleatorio(nMaximo)<<endl;
 	}
 }

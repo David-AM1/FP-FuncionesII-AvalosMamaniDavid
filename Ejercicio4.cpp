@@ -14,8 +14,15 @@ int main(){
 	cout<<"Ingrese el valor del coeficiente 'c': ";
 	cin>>c;
 	discriminante=pow(b,2)-(4*a*c);
-	x1=((-b)+sqrt(discriminante))/(2*a);
-	x2=((-b)-sqrt(discriminante))/(2*a);
-	cout<<"Raíz 1 (X1): "<<x1<<endl;
-	cout<<"Raíz 2 (X2): "<<x2;
+	if(discriminante<0){
+		cout<<"--- Raíces complejas: ---"<<endl;
+		cout<<"Raíz 1 (X1): "<<((-b)/(2*a))<<" + "<<sqrt(-discriminante)/(2*a)<<"i"<<endl;
+		cout<<"Raíz 2 (X2): "<<((-b)/(2*a))<<" - "<<sqrt(-discriminante)/(2*a)<<"i"<<endl;
+	}else{
+		cout<<"--- Raíces reales: ---"<<endl;
+		x1=((-b)+sqrt(discriminante))/(2*a);
+		x2=((-b)-sqrt(discriminante))/(2*a);
+		cout<<"Raíz 1 (X1): "<<x1<<endl;
+		cout<<"Raíz 2 (X2): "<<x2;
+	}
 }

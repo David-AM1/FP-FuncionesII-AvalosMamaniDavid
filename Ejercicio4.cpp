@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 	SetConsoleOutputCP(CP_UTF8);
-	double a, b, c, x1, x2,discriminante;
+	double a, b, c, x, x1, x2, discriminante, imaginario, real;
 	cout<<"--- Cálculo de Raíces de una Ecuación Cuadrática ---"<<endl;
 	cout<<"Ingrese el valor del coeficiente 'a': ";
 	cin>>a;
@@ -15,7 +15,6 @@ int main(){
 	cin>>c;
 	discriminante=pow(b,2)-(4*a*c);
 	if(discriminante<0){
-		double imaginario, real;
 		cout<<"--- Raíces complejas: ---"<<endl;
 		imaginario=sqrt(-discriminante)/(2*a);
 		real=((-b)/(2*a));
@@ -36,6 +35,10 @@ int main(){
 				cout<<"Raíz 2 (X2): - "<<imaginario<<"i"<<endl;
 			}
 		}
+	}else if (discriminante == 0) {
+		x=-b/(2*a);
+		cout<<"--- Raíz real ---"<<endl;
+        cout << "La única raíz es (x): " << x << endl;
 	}else{
 		cout<<"--- Raíces reales: ---"<<endl;
 		x1=((-b)+sqrt(discriminante))/(2*a);

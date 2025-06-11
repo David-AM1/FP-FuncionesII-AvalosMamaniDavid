@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <windows.h>
 using namespace std;
 
 double areaCirculo(double r){
@@ -8,8 +9,10 @@ double areaCirculo(double r){
 }
 
 int main(){
+	SetConsoleOutputCP(CP_UTF8);
 	double radio;
+	cout<<"--- Calculo del área de un Circulo ---"<<endl;
 	cout<<"Ingrese el radio del circulo: ";
 	cin>>radio;
-	cout<<"El area del circulo es: "<<areaCirculo(radio);
+	cout<<"El área del circulo es: "<<areaCirculo(radio);
 }

@@ -15,9 +15,27 @@ int main(){
 	cin>>c;
 	discriminante=pow(b,2)-(4*a*c);
 	if(discriminante<0){
+		double imaginario, real;
 		cout<<"--- Raíces complejas: ---"<<endl;
-		cout<<"Raíz 1 (X1): "<<((-b)/(2*a))<<" + "<<sqrt(-discriminante)/(2*a)<<"i"<<endl;
-		cout<<"Raíz 2 (X2): "<<((-b)/(2*a))<<" - "<<sqrt(-discriminante)/(2*a)<<"i"<<endl;
+		imaginario=sqrt(-discriminante)/(2*a);
+		real=((-b)/(2*a));
+		if(imaginario==1){
+			if(real!=0 or real!=-0){
+			cout<<"Raíz 1 (X1): "<<real<<" + "<<"i"<<endl;
+			cout<<"Raíz 2 (X2): "<<real<<" - "<<"i"<<endl;
+			}else{
+				cout<<"Raíz 1 (X1): + "<<"i"<<endl;
+				cout<<"Raíz 2 (X2): - "<<"i"<<endl;
+			}
+		}else{
+			if(real!=0 or real!=-0){
+			cout<<"Raíz 1 (X1): "<<real<<" + "<<imaginario<<"i"<<endl;
+			cout<<"Raíz 2 (X2): "<<real<<" - "<<imaginario<<"i"<<endl;
+			}else{
+				cout<<"Raíz 1 (X1): + "<<imaginario<<"i"<<endl;
+				cout<<"Raíz 2 (X2): - "<<imaginario<<"i"<<endl;
+			}
+		}
 	}else{
 		cout<<"--- Raíces reales: ---"<<endl;
 		x1=((-b)+sqrt(discriminante))/(2*a);

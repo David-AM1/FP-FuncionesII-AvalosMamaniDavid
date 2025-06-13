@@ -31,10 +31,18 @@ int main(){
 	SetConsoleOutputCP(CP_UTF8);
 	int eleccion, eleccionCPU, rondasConc=0, victorias=0, victoriasCPU=0;
 	bool ganaRonda;
-	cout<<"--- JUEGO DE PIEDRA, PAPEL Y TIJERAS (victoria al ganador de 3 rondas) ---"<<endl;
+	cout<<"--- JUEGO DE PIEDRA, PAPEL Y TIJERAS ---"<<endl;
+	cout<<"REGLAS:"<<endl<<"1. Piedra gana a tijeras."<<endl;
+	cout<<"2. Papel gana a piedra."<<endl;
+	cout<<"3. Tijeras gana a papel."<<endl<<"4. Victoria al ganador de 3 rondas."<<endl<<endl;
+	do{
 	do{
 	cout<<"Elige Piedra(1), Papel(2) o Tijeras(3): ";
 	cin>>eleccion;
+	if(eleccion<1 or eleccion>3){
+		cout<<"Error: Debe elegir una opción correcta."<<endl<<endl;
+	}
+	}while(eleccion<1 or eleccion>3);
 	cout<<"Turno de la computadora ... "<<endl;
 	eleccionCPU=1+rand()%3;
 	switch(eleccionCPU){
@@ -54,7 +62,7 @@ int main(){
 		victorias++;
 		cout<<"Ganaste esta ronda."<<endl<<endl;
 	}else if(eleccion == eleccionCPU){				//si los dos eligen lo mismo EMPATE
-		cout<<"Empate. Siguiente ronda"<<endl<<endl;
+		cout<<"Empate."<<endl<<endl;
 	}else{
 		rondasConc++;
 		victoriasCPU++;
@@ -68,5 +76,7 @@ int main(){
 		cout<<"FELICIDADES, HAS GANADO 3 RONDAS."<<endl;
 	}else if(victoriasCPU==3){
 		cout<<"HAS PERDIDO, LA COMPUTADORA GANÓ 3 RONDAS."<<endl;
-	}	
+	}
+	cout<<"SCORE:"<<endl<<"Tú: "<<victorias<<" rondas"<<endl;
+	cout<<"Computadora:"<<victoriasCPU<<" rondas";	
 }

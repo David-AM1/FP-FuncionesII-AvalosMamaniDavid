@@ -4,16 +4,10 @@
 #include <ctime>
 using namespace std;
 
-void juegoDados(int a, int b, int v1, int v2){
-	if(a>b){
-		cout<<"Gana el Jugador 1."<<endl;
-		
-	}else if(a==b){
-		cout<<"Empate"<<endl;
-	}else{
-		cout<<"Gana el Jugador 2."<<endl;
-		
-	}
+void marcador(int a, int b){
+	cout<<"  Marcador : "<<endl;
+	cout<<"- Jugador 1: "<<a<<endl;
+	cout<<"- Jugador 2: "<<b<<endl<<endl;
 }
 
 int numero(){
@@ -46,17 +40,15 @@ int main(){
 		turnoP2=numero();
 		cout<<"Obtuvo: "<<turnoP2<<endl;
 		if(turnoP1 > turnoP2){
-		cout<<"El jugador 1 GANA la ronda."<<endl;
-		victoriasP1++;
+			cout<<"El jugador 1 GANA la ronda."<<endl;
+			victoriasP1++;
 		}else if(turnoP1==turnoP2){
-		cout<<"Empate"<<endl;
+			cout<<"Empate"<<endl;
 		}else{
-		cout<<"El jugador 2 GANA la ronda."<<endl;
-		victoriasP2++;
+			cout<<"El jugador 2 GANA la ronda."<<endl;
+			victoriasP2++;
 		}
-		cout<<"* Marcador:"<<endl;
-		cout<<"- Jugador 1: "<<victoriasP1<<endl;
-		cout<<"- Jugador 2: "<<victoriasP2<<endl<<endl;
+		marcador(victoriasP1,victoriasP2);
 	}if(victoriasP1==3){
 		cout<<"---VICTORIA DEL JUGADOR 1 ---";
 	}if(victoriasP2==3){

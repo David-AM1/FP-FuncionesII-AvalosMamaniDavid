@@ -12,8 +12,15 @@ int main(){
 	cout<<"Monedas: "<<monedas<<endl;
 	cout<<"Primera ronda ..."<<endl;
 	do{
-		cout<<"¿Cuantas monedas quiere apostar?: ";
-		cin>>apuesta;
+		do{
+			cout<<"¿Cuantas monedas quiere apostar? (del 1 al 10): ";
+			cin>>apuesta;
+			if(apuesta<1 or apuesta>10){
+				cout<<"Intente nuevamente ingresando una apuesta correcta (del 1 al 10)."<<endl<<endl;
+			}if(apuesta>monedas){
+				cout<<"No tienes monedas suficientes. Intenta nuevamente."<<endl<<endl;
+			}
+		}while((apuesta<1 or apuesta>10)or(apuesta>monedas));
 		monedas-=apuesta;
 		n1=1+rand()%5;
 		n2=1+rand()%5;
@@ -42,5 +49,5 @@ int main(){
 		}
 		cout<<"Siguiente ronda..."<<endl;
 	}while(monedas>0);
-	cout<<"Te has quedado sin monedas.";
+	cout<<"TE HAS QUEDADO SIN MONEDAS.";
 }
